@@ -1,10 +1,12 @@
 from sqlalchemy import Column, Integer, ForeignKey, Date, Float, PrimaryKeyConstraint
 from sqlalchemy.orm import relationship
+from sqlalchemy_serializer  import SerializerMixin
+
 
 from config.base import Base
 
 
-class Rental(Base):
+class Rental(Base, SerializerMixin):
     __tablename__ = 'rentals'
 
     id = Column(Integer, primary_key=True)
